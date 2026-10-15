@@ -12,3 +12,16 @@ SELECT(
 	LIMIT 1 OFFSET 1
 	) AS secondhighestsalary;
 _____________________________________________________________________
+--181.employees earning more than their managers
+SELECT e.name AS employee
+FROM employee e 
+JOIN employee m 
+ON e.managerID = m.ID 
+WHERE e.salary > m.salary;
+
+--182. duplicate email 
+SELECT email AS Email 
+FROM person 
+GROUP BY email 
+HAVING COUNT (email) > 1;
+_____________________________________________________________________
