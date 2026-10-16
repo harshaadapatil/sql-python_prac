@@ -16,3 +16,19 @@ a = 102.2234567
 print (type(a))
 print("the value of a is %.2f" %(a))
 ______________________________________________________________________________________
+# 1.Write a Python program to do arithmetical operations addition and division. 
+a = 10
+b = 5 
+addition = a + b 
+print("Addition:", addition)
+
+division = a / b 
+print("Division:", division)
+
+
+# 2.Write a Python program to find the area of a triangle.
+base = 10 
+height = 5 
+area = 0.5 * base * height 
+print("Area of triangle:", area)
+______________________________________________________________________________________
