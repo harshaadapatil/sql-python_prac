@@ -32,3 +32,19 @@ height = 5
 area = 0.5 * base * height 
 print("Area of triangle:", area)
 ______________________________________________________________________________________
+# 3.W.A.P to swap two variables 
+a = 5
+b = 10
+temp = a 
+a = b 
+b = temp 
+print("after swapping:")
+print("a=", a)
+print("b=", b)
+
+# 4.to acceppt id, name, and salary 
+id = int(input('enter id:'))
+name = input('enter name:')
+sal = float(input('enter salary:'))
+print('your id={}\nName={}\nSalary={}'.format(id,name,sal))
+______________________________________________________________________________________
