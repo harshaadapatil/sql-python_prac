@@ -43,3 +43,18 @@ WHERE (departmentid, salary) IN(
 	   GROUP BY departmentid 
 	   );
 _____________________________________________________________________
+--511. game play analysis 
+SELECT 
+ player_id, 
+ MIN(event_date) AS first_login 
+ FROM Activity 
+ GROUP BY player_id;
+ 
+--577.employee bonus 
+SELECT e.name, b.bonus 
+FROM employee e 
+LEFT JOIN Bonus b 
+ON e.empid = b.empid 
+WHERE b.bonus < 1000 
+OR b.bonus IS NULL ; 
+_____________________________________________________________________
