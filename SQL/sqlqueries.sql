@@ -58,3 +58,16 @@ ON e.empid = b.empid
 WHERE b.bonus < 1000 
 OR b.bonus IS NULL ; 
 _____________________________________________________________________
+--584. Find customer referr
+SELECT name
+FROM customer 
+WHERE referee_id != 2
+OR referee_id IS NULL;
+
+--586. customer placing the largest numbers of orders
+SELECT customer_number
+FROM Orders
+GROUP BY customer_number
+ORDER BY COUNT(order_number) DESC
+LIMIT 1;
+_____________________________________________________________________
