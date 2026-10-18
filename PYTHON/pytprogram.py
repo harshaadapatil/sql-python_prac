@@ -48,3 +48,19 @@ name = input('enter name:')
 sal = float(input('enter salary:'))
 print('your id={}\nName={}\nSalary={}'.format(id,name,sal))
 ______________________________________________________________________________________
+# 5.W.A.P to check if a number is positive, negative or zero
+num = float(input("enter a number: "))
+if num > 0:
+    print("positive number")
+elif num == 0:
+    print("zero") 
+else:
+    print("negative number") 
+
+#6. W.A.P to check if a number is odd or even
+num = int(input("enter a number: "))
+if num % 2 == 0:
+    print("even number")
+else:
+    print("odd number")
+  ______________________________________________________________________________________
