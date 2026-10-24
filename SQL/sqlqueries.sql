@@ -101,3 +101,56 @@ LEFT JOIN employees e
 ON d.department_id = e.department_id 
 WHERE e.id IS NULL;
 _____________________________________________________________________
+--197. rising temperature
+SELECT w1.id
+FROM Weather w1
+JOIN Weather w2
+ON DATEDIFF(w1.recordDate, w2.recordDate) = 1
+WHERE w1.temperature > w2.temperature;
+
+--607. sales person
+SELECT name
+FROM SalesPerson
+WHERE sales_id NOT IN (
+    SELECT o.sales_id
+    FROM Orders o
+    JOIN Company c
+    ON o.com_id = c.com_id
+    WHERE c.name = 'RED'
+);
+_____________________________________________________________________
+--610. triangle judgement
+SELECT x, y, z,
+    CASE
+        WHEN x + y > z
+         AND x + z > y
+         AND y + z > x
+        THEN 'Yes'
+        ELSE 'No'
+    END AS triangle
+FROM Triangle;
+
+--619. biggest single number 
+SELECT MAX(num) AS num
+FROM MyNumbers
+WHERE num IN (
+    SELECT num
+    FROM MyNumbers
+    GROUP BY num
+    HAVING COUNT(num) = 1
+);
+_____________________________________________________________________
+--620. not boring movies
+SELECT *
+FROM Cinema
+WHERE id % 2 = 1
+  AND description <> 'boring'
+ORDER BY rating DESC;
+
+--627. swap sex of employees 
+UPDATE Salary
+SET sex = CASE
+    WHEN sex = 'f' THEN 'm'
+    ELSE 'f'
+END;
+_____________________________________________________________________
