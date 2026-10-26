@@ -154,3 +154,15 @@ SET sex = CASE
     ELSE 'f'
 END;
 _____________________________________________________________________
+--1050. actors and directors who cooperated at least three times 
+SELECT actor_id, director_id
+FROM ActorDirector
+GROUP BY actor_id, director_id
+HAVING COUNT(*) >= 3;
+
+--1068. product sales analysis1 
+SELECT p.product_name, s.year, s.price
+FROM Sales s
+INNER JOIN Product p
+ON s.product_id = p.product_id;
+_____________________________________________________________________
