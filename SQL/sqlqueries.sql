@@ -166,3 +166,20 @@ FROM Sales s
 INNER JOIN Product p
 ON s.product_id = p.product_id;
 _____________________________________________________________________
+--1075. project employees 
+SELECT p.project_id,
+ROUND(AVG(e.experience_years), 2) AS average_years
+FROM Project p
+JOIN Employee e
+ON p.employee_id = e.employee_id
+GROUP BY p.project_id;
+
+--1084. sales analysis
+SELECT p.product_id, p.product_name
+FROM Product p
+JOIN Sales s
+ON p.product_id = s.product_id
+GROUP BY p.product_id, p.product_name
+HAVING MIN(s.sale_date) >= '2019-01-01'
+AND MAX(s.sale_date) <= '2019-03-31';
+_____________________________________________________________________
