@@ -195,3 +195,17 @@ FROM Views
 WHERE author_id = viewer_id
 ORDER BY id;
 _____________________________________________________________________
+--Q. Find employees who have the same salary as their manager. 
+SELECT e.name AS Employee, e.salary, m.name AS Manager 
+FROM employees e 
+JOIN employees m 
+ON e.manager_id = m.id 
+WHERE e.salary = m.salary; 
+ 
+--Q. Write a query to get the first and last purchase date for each customer. 
+SELECT customer_id, 
+MIN(purchase_date) AS first_purchase, 
+MAX(purchase_date) AS last_purchase 
+FROM sales 
+GROUP BY customer_id;
+_____________________________________________________________________
