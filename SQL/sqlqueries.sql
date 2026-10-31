@@ -209,3 +209,19 @@ MAX(purchase_date) AS last_purchase
 FROM sales 
 GROUP BY customer_id;
 _____________________________________________________________________
+--Q. Find customers who made purchases in every 
+SELECT customer_id
+FROM sales s
+GROUP BY customer_id
+HAVING COUNT(DISTINCT category_id) =
+       (SELECT COUNT(DISTINCT category_id)
+        FROM sales);
+ 
+--Q. Identify employees who haven’t received a salary 
+SELECT e.name
+FROM employees e
+JOIN salary_history sh
+ON e.id = sh.employee_id
+GROUP BY e.id, e.name
+HAVING MAX(sh.raise_date) < CURRENT_DATE - INTERVAL '1 year';
+_____________________________________________________________________
